@@ -67,12 +67,9 @@ def get_teams()
 end
 
 def team_names()
-  data =game_hash()
+  data = get_teams()
   
-  data.reduce([]) { |memo, (designation, team)| 
-    memo << team[:team_name]
-    memo
-  }
+  data.map { |team| team[:team_name] }
 end
 
 def player_numbers(team_name)
