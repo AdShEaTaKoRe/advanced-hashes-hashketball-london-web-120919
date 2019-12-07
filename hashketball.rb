@@ -29,8 +29,9 @@ end
 
 def num_points_scored()
   data = game_hash()
+  pp data
   
-  pp data.reduce({}) { |memo, (team_name, team_data)|
+  data.reduce({}) { |memo, (team_name, team_data)|
     team_data[:players].each { |player|
       memo[player[:player_name]] = player[:poins]
     }
