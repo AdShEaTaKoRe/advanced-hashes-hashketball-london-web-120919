@@ -28,15 +28,13 @@ def game_hash()
 end
 
 def get_player(player_name)
-  data = game_hash()
+  players = get_players()
   
-  data.each { |designation, team|
-    found_player = team[:players].find { |player| player[:player_name] == player_name }
+  players.find { |player| player[:player_name] == player_name }
     
-    if found_player
-      return found_player
-    end
-  }
+  if found_player
+    return found_player
+  end
 end
 
 def num_points_scored(player_name)
@@ -97,16 +95,24 @@ def player_stats(player_name)
   }
 end
 
-def big_shoe_rebounds()
+def get_players()
   teams = get_teams()
-  
-  players = teams.reduce([]) { |memo, team| 
+  teams.reduce([]) { |memo, team| 
     team[:players].each { |player| memo << player }
     memo
   }
+end
+
+def big_shoe_rebounds()
+  players = get_players() 
   
   biggest_player = players.max_by {|player| player[:shoe]}
   biggest_player[:rebounds]
 end
 
-
+def most_points_scored()
+  players = get_players() 
+  
+  best_player = players.max_by {|player| player[:points]}
+  biggest_player
+end
