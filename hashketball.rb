@@ -30,7 +30,7 @@ end
 def get_player(player_name)
   players = get_players()
   
-  players.find { |player| player[:player_name] == player_name }
+  found_player = players.find { |player| player[:player_name] == player_name }
     
   if found_player
     return found_player
