@@ -97,6 +97,12 @@ def player_stats(player_name)
   }
 end
 
-def big
+def big_shoe_rebounds()
+  teams = get_teams()
+  
+  teams.each { |team| 
+    
+  }
+end
 
 
