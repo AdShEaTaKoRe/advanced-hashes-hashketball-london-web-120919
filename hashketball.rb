@@ -114,5 +114,5 @@ def most_points_scored()
   players = get_players() 
   
   best_player = players.max_by {|player| player[:points]}
-  biggest_player
+  biggest_player[:player_name]
 end
