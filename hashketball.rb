@@ -131,3 +131,9 @@ def winning_team()
   winning_team[:team_name]
 end
 
+def player_with_longest_name()
+  players = get_players()
+  
+  found_player = players.max_by { |player| player[:player_name].length }
+end
+
