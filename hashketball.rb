@@ -30,7 +30,7 @@ end
 def num_points_scored(player_name)
   data = game_hash()
   
-  data.each { |team_name;team_data|
+  data.each { |team_data|
     found_player = team_data[:players].find { |player| player[:player_name] == player_name }
     
     if found_player
