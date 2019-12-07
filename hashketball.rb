@@ -138,9 +138,9 @@ def player_with_longest_name()
   found_player[:player_name]
 end
 
-def long_name_steals_a_ton()
+def long_name_steals_a_ton?()
   players = get_players()
   
   stealing_player = players.max_by { |player| player[:steals] }
-  return stealing_player[:player_name] == player_with_longest_name()
+  stealing_player[:player_name] == player_with_longest_name()
 end
