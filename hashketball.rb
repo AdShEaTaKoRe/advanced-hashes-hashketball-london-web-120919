@@ -27,24 +27,12 @@ def game_hash()
   }
 end
 
-def get_player_stats(player_name)
-  data = game_hash()
-  
-  data.each { |designation, team|
-    found_player = team[:players].find { |player| player[:player_name] == player_name }
-    
-    if found_player
-      return found_player
-    end
-  }
-end
-
 def num_points_scored(player_name)
-  get_player_stats(player_name)[:points]
+  player_stats(player_name)[:points]
 end
 
 def shoe_size(player_name)
-  get_player_stats(player_name)[:shoe]
+  player_stats(player_name)[:shoe]
 end
 
 def team_colors(team_name)
@@ -80,5 +68,17 @@ def player_numbers(team_name)
   if found_team
       return found_team[:players].map { |player| player[:number]}
   end
+end
+
+def player_stats(player_name)
+  data = game_hash()
+  
+  data.each { |designation, team|
+    found_player = team[:players].find { |player| player[:player_name] == player_name }
+    
+    if found_player
+      return found_player
+    end
+  }
 end
 
