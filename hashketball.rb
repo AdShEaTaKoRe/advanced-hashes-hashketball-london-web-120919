@@ -100,12 +100,13 @@ end
 def big_shoe_rebounds()
   teams = get_teams()
   
-  players teams.reduce([]) { |memo, team| 
+  players = teams.reduce([]) { |memo, team| 
     team[:players].each { |player| memo << player }
     memo
   }
   
-  players.maxby
+  biggest_player = players.max_by {|player| player[:shoe]}
+  biggest_player[:rebounds]
 end
 
 
