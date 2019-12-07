@@ -51,7 +51,9 @@ def team_colors(team_name)
   data = game_hash()
   
   data.each { |designation, team| 
-    
+    if team[:team_name] == team_name
+      return team[:colors]
+    end
   }
 end
 
