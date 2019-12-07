@@ -34,7 +34,7 @@ def num_points_scored(player_name)
     found_player = team[:players].find { |player| player[:player_name] == player_name }
     
     if found_player
-      return player[:points]
+      return found_player[:points]
     end
   }
 end
