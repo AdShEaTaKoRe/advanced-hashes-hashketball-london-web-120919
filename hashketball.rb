@@ -84,6 +84,6 @@ end
 
 def player_stats(player_name)
   player = get_player(player_name)
-  player.delete(:player_name)
+  delete(player[:player_name])
 end
 
