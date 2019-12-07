@@ -84,6 +84,16 @@ end
 
 def player_stats(player_name)
   player = get_player(player_name)
-  delete(player[:player_name])
+  
+  return {
+    :number => player[:number],
+    :shoe => player[:shoe],
+    :points => player[:points],
+    :rebounds => player[:rebounds],
+    :assists =>  player[:assists],
+    :steals => player[:steals],
+    :blocks => player[:blocks],
+    :slam_dunks => player[:slam_dunks]
+  }
 end
 
