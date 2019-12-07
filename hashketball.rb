@@ -27,20 +27,25 @@ def game_hash()
   }
 end
 
-def num_points_scored(player_name)
+def get_player_stats(player_name)
   data = game_hash()
   
   data.each { |designation, team|
     found_player = team[:players].find { |player| player[:player_name] == player_name }
     
     if found_player
-      return found_player[:points]
+      return found_player
     end
   }
 end
 
+def num_points_scored(player_name)
+  get_player_stats(player_name)[:points]
+end
 
-
+def shoe_size(player_name)
+  get_player_stats(player_name)[:shoe]
+end
 
 
 
