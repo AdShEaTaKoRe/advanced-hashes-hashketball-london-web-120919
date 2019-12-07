@@ -135,5 +135,6 @@ def player_with_longest_name()
   players = get_players()
   
   found_player = players.max_by { |player| player[:player_name].length }
+  found_player[:player_name]
 end
 
