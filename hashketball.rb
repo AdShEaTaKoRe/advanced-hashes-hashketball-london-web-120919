@@ -116,3 +116,18 @@ def most_points_scored()
   best_player = players.max_by {|player| player[:points]}
   best_player[:player_name]
 end
+
+def winning_team()
+  teams = get_teams()
+  
+  teams_with_score = teams.map { |team| 
+    team[:score] = team[:players].reduce(0) { |memo, player|
+      memo += player[:points]
+    }
+    team
+  }
+  
+  winning_team = teams_with_score.max_by { |team| team[:score] }
+  winning_team[:team_name]
+end
+
