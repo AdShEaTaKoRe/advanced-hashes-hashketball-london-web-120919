@@ -48,6 +48,11 @@ def shoe_size(player_name)
 end
 
 def team_colors(team_name)
+  data = game_hash()
+  
+  data.each { |designation, team| 
+    
+  }
 end
 
 
