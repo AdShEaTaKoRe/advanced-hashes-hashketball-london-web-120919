@@ -27,7 +27,7 @@ def game_hash()
   }
 end
 
-def num_points_scored()
+def num_points_scored(player_name)
   data = game_hash()
   pp data
   
@@ -36,7 +36,7 @@ def num_points_scored()
       memo[player[:player_name]] = player[:poins]
     }
     memo  
-  }
+  }[player_name]
 end
 
 
