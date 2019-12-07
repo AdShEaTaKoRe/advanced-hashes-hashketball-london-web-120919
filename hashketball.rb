@@ -142,5 +142,5 @@ def long_name_steals_a_ton()
   players = get_players()
   
   stealing_player = players.max_by { |player| player[:steals] }
-  stealing_player[:player_name] == player_with_longest_name()
+  return stealing_player[:player_name] == player_with_longest_name()
 end
