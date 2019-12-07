@@ -105,7 +105,7 @@ def big_shoe_rebounds()
     memo
   }
   
-  players.max
+  players.maxby
 end
 
 
