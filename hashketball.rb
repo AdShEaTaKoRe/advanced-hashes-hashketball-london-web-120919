@@ -2,7 +2,7 @@ require "pp"
 
 def game_hash()
   data = {
-    :home => {
+    :home2 => {
       :team_name => "Brooklyn Nets",
       :colors => ["Black", "White"],
       :players => [
