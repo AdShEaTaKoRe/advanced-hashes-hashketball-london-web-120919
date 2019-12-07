@@ -73,11 +73,12 @@ def team_names()
 end
 
 def player_numbers(team_name)
-  data =game_hash()
+  data = get_teams()
   
-  data.reduce([]) { |memo, (designation, team)| 
-    memo << team[:team_name]
-    memo
-  }
+  found_team = data.find { |team| team[:team_name] == team_name }
+  
+  if found_team
+      return found_team[:players].map { |player| player[:number]}
+  end
 end
 
