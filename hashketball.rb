@@ -31,8 +31,8 @@ def num_points_scored(player_name)
   data = game_hash()
   
   data.each { |team|
+  pp team[:players]
     found_player = team[:players].find { |player| player[:player_name] == player_name }
-    pp found_player
     
     if found_player
       return player[:points]
