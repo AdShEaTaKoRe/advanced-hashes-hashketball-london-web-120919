@@ -57,6 +57,15 @@ def team_colors(team_name)
   }
 end
 
+def get_teams()
+  data =game_hash()
+  
+  data.reduce([]) { |memo, (designation, team)| 
+    memo << team
+    memo
+  }
+end
+
 def team_names()
   data =game_hash()
   
@@ -66,6 +75,12 @@ def team_names()
   }
 end
 
-def player_numbers()
+def player_numbers(team_name)
+  data =game_hash()
+  
+  data.reduce([]) { |memo, (designation, team)| 
+    memo << team[:team_name]
+    memo
+  }
 end
 
